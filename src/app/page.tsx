@@ -16,7 +16,7 @@ export default function Home() {
           </p>
         </div>
         <Typography className="">
-          Chat with your <span className="text-violet-600">documents</span> in
+          Chat with your <span className="text-primary">documents</span> in
           seconds
         </Typography>
         <Typography variant="p" className="text-slate-500">
@@ -73,7 +73,7 @@ export default function Home() {
             <ol className="my-8 text-left lg:flex lg:space-y-0 lg:space-x-12">
               <li className="max-w-xs md:max-w-md mx-auto">
                 <div className="flex flex-col space-y-4 border-l-4 border-slate-300 pl-2 lg:border-l-0 lg:border-t-2 lg:pb-0 lg:pl-0 lg:pt-4">
-                  <span className="text-sm font-medium text-violet-600">
+                  <span className="text-sm font-medium text-primary">
                     Step 1
                   </span>
                   <span className="text-xl font-semibold">
@@ -91,7 +91,7 @@ export default function Home() {
 
               <li className="my-4 max-w-xs md:max-w-md mx-auto">
                 <div className="flex flex-col space-y-4 border-l-4 border-slate-300 pl-2 lg:border-l-0 lg:border-t-2 lg:pb-0 lg:pl-0 lg:pt-4">
-                  <span className="text-sm font-medium text-violet-600">
+                  <span className="text-sm font-medium text-primary">
                     Step 2
                   </span>
                   <span className="text-xl font-semibold">
@@ -106,7 +106,7 @@ export default function Home() {
 
               <li className="my-4 max-w-xs md:max-w-md mx-auto">
                 <div className="flex flex-col space-y-4 border-l-4 border-slate-300 pl-2 lg:border-l-0 lg:border-t-2 lg:pb-0 lg:pl-0 lg:pt-4">
-                  <span className="text-sm font-medium text-violet-600">
+                  <span className="text-sm font-medium text-primary">
                     Step 3
                   </span>
                   <span className="text-xl font-semibold">
