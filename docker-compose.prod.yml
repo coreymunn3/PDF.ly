@@ -22,8 +22,6 @@ services:
       - pdfly_pgdata:/var/lib/postgresql/data
     env_file:
       - .db.env
-    ports:
-      - 25432:5432
     networks:
       - pdfly-net
 
