@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  pdfly-next:
+    container_name: pdfly-next
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '3000:3000'
+    networks:
+      - pdfly-net
+    depends_on:
+      - pdfly-db
+
+  pdfly-db:
+    image: postgres:16-alpine
+    volumes:
+      - pdfly_pgdata:/var/lib/postgresql/data
+    env_file:
+      - .db.env
+    ports:
+      - 25432:5432
+    networks:
+      - pdfly-net
+
+volumes:
+  pdfly_pgdata:
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  pdfly-net:
+    external: true
