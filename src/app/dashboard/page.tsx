@@ -1,15 +1,25 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import db from "@/db";
 
 const Dashboard = async () => {
   const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const kindeUser = await getUser();
   // if the user is brand new, we need to sync them to the DB
-  if (!user || !user.id) {
+  if (!kindeUser || !kindeUser.id) {
+    redirect("/auth-callback?origin=dashboard");
+  }
+  // if user is not in our database, add them
+  const dbUser = await db.user.findFirst({
+    where: {
+      id: kindeUser.id,
+    },
+  });
+  if (!dbUser) {
     redirect("/auth-callback?origin=dashboard");
   }
 
-  return <div>{user?.email}</div>;
+  return <div>{dbUser?.email}</div>;
 };
 
 export default Dashboard;
