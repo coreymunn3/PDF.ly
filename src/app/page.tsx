@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-const Home = async () => {
+const Home = () => {
   return (
     <>
       <LandingPageSection>
