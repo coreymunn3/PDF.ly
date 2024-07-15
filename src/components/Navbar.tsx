@@ -4,6 +4,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import { buttonVariants } from "./ui/button";
 import {
   LoginLink,
+  LogoutLink,
   RegisterLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 
@@ -41,6 +42,14 @@ const Navbar = () => {
             >
               Get Started
             </RegisterLink>
+            <LogoutLink
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+              })}
+            >
+              Log Out
+            </LogoutLink>
           </div>
         </div>
       </MaxWidthWrapper>
