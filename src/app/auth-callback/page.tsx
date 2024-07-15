@@ -32,7 +32,7 @@ const Page = ({
       <LoadingSpinner size={48} />
       <br></br>
       <Typography variant={"h3"} className="text-primary">
-        Setting Up Your Account...
+        Syncing Your Account...
       </Typography>
     </div>
   );
