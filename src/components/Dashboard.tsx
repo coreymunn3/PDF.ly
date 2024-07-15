@@ -6,7 +6,7 @@ import { LoadingSpinner } from "./ui/spinner";
 import UploadButton from "./UploadButton";
 import { trpc } from "@/app/_trpc/client";
 import { Ghost, MessageSquare, Plus, TrashIcon } from "lucide-react";
-import { format } from "date-fns";
+import { DateTime } from "luxon";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
@@ -86,7 +86,9 @@ const Dashboard = () => {
                     <div className="grid grid-cols-3 p-2 gap-6 place-items-center text-xs text-zinc-500">
                       <div className="flex items-center gap-2">
                         <Plus className="h-4 w-4" />
-                        {format(new Date(file.createdAt!), "MMM yyyy")}
+                        {DateTime.fromJSDate(
+                          new Date(file.createdAt!)
+                        ).toFormat("MMM yyyy")}
                       </div>
                       <div className="flex items-center gap-2">
                         <MessageSquare className="h-4 w-4" />
