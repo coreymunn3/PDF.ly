@@ -28,8 +28,6 @@ const Page = async ({ params }: PageProps) => {
   });
   if (!file) notFound();
 
-  console.log(file);
-
   // render the file
   return (
     <MaxWidthWrapper>
@@ -38,7 +36,7 @@ const Page = async ({ params }: PageProps) => {
           {/* PDF Left side */}
           <div className="flex-1 xl:flex">
             <div className="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1">
-              <PdfRenderer />
+              <PdfRenderer fileUrl={file.url} />
             </div>
           </div>
 
